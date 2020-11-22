@@ -1,6 +1,6 @@
 import io from 'socket.io-client'
 
-const socket = io('http://localhost:3001', {
+const socket = io('http://0.0.0.0:3001', {
     transports: ['websocket']
 })
 let pseudo = "";
@@ -55,5 +55,16 @@ export const receiveMessage = (setAllMessage, callback) => {
     socket.on("new-message", msg => {
         const pseudo = getUserPseudo()
         callback(msg, setAllMessage, pseudo)
+    })
+}
+
+
+/**
+ * Receive message from socket and toast in because we are in another component
+ * @param callback
+ */
+export const receiveMessageInAnotherComponent = (callback) => {
+    socket.on("new-message", msg => {
+        callback(msg)
     })
 }

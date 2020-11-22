@@ -16,6 +16,10 @@ export const Message = () => {
 
     useEffect(() => {
         setUserPseudo(pseudo)
+
+        return () => {
+            setAllMessage([])
+        }
     }, [pseudo])
 
     function handleSubmit(e) {

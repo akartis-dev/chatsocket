@@ -8,11 +8,14 @@ import {useToasts} from 'react-toast-notifications'
 export const useIsNeedToShow = () => {
     const {addToast} = useToasts()
 
+    const toastNewMessage = ({pseudo}) => {
+        return addToast(`New message from ${pseudo}`, {appearance: 'success'})
+    }
+
     const newMessage = (message, state, pseudo) => {
         if(message.pseudo === pseudo){
             return state(c => [...c, message])
         }
-        return addToast(`New message from ${message.pseudo}`, {appearance: 'success'})
     }
-    return {newMessage}
+    return {newMessage, toastNewMessage}
 }

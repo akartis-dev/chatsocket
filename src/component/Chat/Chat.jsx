@@ -1,9 +1,18 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Connected} from './Connected'
 import {Message} from './Message'
 import {Route, Switch} from "react-router-dom";
+import {receiveMessageInAnotherComponent} from "../../socket/userConnected";
+import {useIsNeedToShow} from "../../Hooks/MessageService";
 
 export const Chat = () => {
+
+    const {toastNewMessage} = useIsNeedToShow()
+
+    useEffect(() => {
+        receiveMessageInAnotherComponent(toastNewMessage)
+    }, [])
+
     return (
         <div className="container">
             <div className="row">
