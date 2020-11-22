@@ -36,7 +36,7 @@ export const Message = () => {
     return (
         <div className={"message-container"}>
             <div className={"message"}>
-                <h4 className='text-center'>Discussion avec {pseudo}</h4>
+                <h4 className='bg-dark text-white p-1'>{pseudo}</h4>
                 <ul id='all-message'>
                     {allMessage.map((e, i) => (
                         <li key={i} className={e.pseudo === myPseudo ? 'my-message' : 'other-message'}>{e.message}</li>

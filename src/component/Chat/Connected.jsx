@@ -3,7 +3,7 @@ import {login, userList} from '../../socket/userConnected'
 import {NavLink} from "react-router-dom"
 
 export const Connected = () => {
-    //TODO Create a rom for each talk with another user
+
     const [users, setUsers] = useState([])
     const myPseudo = localStorage.getItem("pseudo")
 
@@ -14,15 +14,24 @@ export const Connected = () => {
 
     return (
         <>
-            <h4>En ligne</h4>
-            <ul>
+            <div>
+                <h5>My profil</h5>
+                <h6><i className="fa fa-user" /> {localStorage.getItem('pseudo')}</h6>
+            </div>
+            <hr/>
+            <h4><i className="fa fa-list"/> En ligne</h4>
+            <ul className="list-connected">
                 {users.map((e, i) => e.pseudo !== myPseudo ? (
                     <li key={i}>
-                        <NavLink to={`/chat/${e.pseudo}`} activeStyle={{fontSize: "18px"}}>
-                            <span className="badge bg-success">{e.pseudo}</span>
+                        <NavLink to={`/chat/${e.pseudo}`} activeClassName="activePseudo">
+                            <i className="fa fa-user-circle text-dark mr-2"/>
+                            <div className="one-pseudo">
+                                <div>{e.pseudo}</div>
+                                <i className="fa fa-circle"/>
+                            </div>
                         </NavLink>
                     </li>
-                ): '')}
+                ) : '')}
             </ul>
         </>
     )

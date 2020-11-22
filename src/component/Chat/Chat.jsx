@@ -4,6 +4,7 @@ import {Message} from './Message'
 import {Route, Switch} from "react-router-dom";
 import {receiveMessageInAnotherComponent} from "../../socket/userConnected";
 import {useIsNeedToShow} from "../../Hooks/MessageService";
+import {AboutChat} from "./AboutChat";
 
 export const Chat = () => {
 
@@ -14,16 +15,16 @@ export const Chat = () => {
     }, [])
 
     return (
-        <div className="container">
+        <div className="container mt-4">
             <div className="row">
-                <h1>Welcome {localStorage.getItem('pseudo')}</h1>
+                <div className="col-sm-3">
+                    <Connected/>
+                </div>
                 <div className="col-sm-9">
                     <Switch>
                         <Route path='/chat/:pseudo' component={Message}/>
+                        <Route path='/chat/' component={AboutChat}/>
                     </Switch>
-                </div>
-                <div className="col-sm-3">
-                    <Connected/>
                 </div>
             </div>
         </div>
