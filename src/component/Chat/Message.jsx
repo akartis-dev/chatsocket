@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
-import {receiveMessage, sendMessage, setUserPseudo} from "../../socket/userConnected";
+import {getUserMessage, receiveMessage, sendMessage, setUserPseudo} from "../../socket/userConnected";
 import {useIsNeedToShow} from "../../Hooks/MessageService";
 
 export const Message = () => {
@@ -16,7 +16,7 @@ export const Message = () => {
 
     useEffect(() => {
         setUserPseudo(pseudo)
-
+        getUserMessage(setAllMessage)
         return () => {
             setAllMessage([])
         }
