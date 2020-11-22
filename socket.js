@@ -27,7 +27,6 @@ io.on('connection', client => {
         let toUser = null
         user.forEach(e => e.pseudo === pseudo ? toUser = e : null)
         client.broadcast.to(toUser.id).emit("new-message", {pseudo: currentUser.pseudo, message})
-        console.log("broadcast to ", toUser)
     })
 
 

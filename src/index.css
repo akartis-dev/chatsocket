@@ -6,7 +6,6 @@
 
 .message-container{
   height: 75vh;
-  background-color: lightgray;
   position: relative;
 }
 
@@ -19,4 +18,31 @@
 .message{
   height: 70vh;
   overflow-y: scroll;
+}
+
+#all-message{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.other-message{
+  width: 50%;
+  float: right;
+  text-align: right;
+  padding: 10px 25px 10px 5px;
+  background-color: #2FB8B7;
+  color: white;
+  border-radius: 8px;
+  margin: 5px;
+  box-shadow: gray 1px 3px 5px;
+}
+
+.my-message{
+  width: 50%;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px 5px 10px 25px;
+  box-shadow: gray 1px 3px 5px;
+  clear: both;
 }
