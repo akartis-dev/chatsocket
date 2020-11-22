@@ -1,17 +1,18 @@
 import React from 'react'
-import { Connected } from './Connected'
-import { Message } from './Message'
+import {Connected} from './Connected'
+import {Message} from './Message'
+import {Route, Switch} from "react-router-dom";
 
 export const Chat = () => {
-    return(
+    return (
         <div className="container">
             <div className="row">
                 <h1>Chat page</h1>
                 <div className="col-sm-9">
-                    <Message />
+                    <Route path='/chat/:pseudo' component={Message}/>
                 </div>
                 <div className="col-sm-3">
-                    <Connected />
+                    <Connected/>
                 </div>
             </div>
         </div>
