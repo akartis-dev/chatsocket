@@ -1,5 +1,88 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
 .indexPage{
   height: 100vh !important;
+}
+
+.message-container{
+  height: 75vh;
+  position: relative;
+}
+
+.message-input{
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+
+.message{
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+#all-message{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.other-message{
+  width: 50%;
+  float: right;
+  text-align: right;
+  padding: 10px 25px 10px 5px;
+  background-color: #2FB8B7;
+  color: white;
+  border-radius: 8px;
+  margin: 5px;
+  box-shadow: gray 1px 1px 5px;
+  position: relative;
+}
+
+.other-message::after{
+  content: "";
+  height: 20px;
+  width: 15px;
+  background: linear-gradient(45deg, transparent 50%, #2FB8B7 50%);
+  position: absolute;
+  bottom: -15px;
+}
+
+.my-message{
+  width: 50%;
+  border-radius: 8px;
+  margin: 5px;
+  padding: 10px 5px 10px 25px;
+  box-shadow: gray 1px 3px 5px;
+  clear: both;
+  position: relative;
+}
+
+.list-connected{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.one-pseudo{
+  display: inline-block;
+}
+
+.one-pseudo div{
+  display: inline-block;
+  vertical-align: middle;
+  color: black !important;
+}
+
+.one-pseudo i{
+  margin-left: 5px;
+  font-size: 8px;
+  color: #64B695 !important;
+}
+
+.activePseudo{
+  background-color: #bdccfa;
+  color: white !important;
+  padding: 3px;
+  border-radius: 3px;
 }

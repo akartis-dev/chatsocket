@@ -3,16 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
+import {ToastProvider} from 'react-toast-notifications';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>
-  ,
-  document.getElementById('root')
+    <BrowserRouter>
+        <ToastProvider
+            autoDismiss
+            autoDismissTimeout={4000}
+        >
+            <React.StrictMode>
+                <App/>
+            </React.StrictMode>
+        </ToastProvider>
+    </BrowserRouter>
+    ,
+    document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
