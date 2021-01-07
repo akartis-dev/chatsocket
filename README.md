@@ -1,6 +1,6 @@
-#Chat application React and socket.io
+# Chat application React and socket.io
 
-##Resume
+## Resume
 
 Pour envoyer un event sur socket.io cote client ou cote serveur, on utilise la methode **emit("event", data)**
 
@@ -14,8 +14,8 @@ Pour ecouter un evenement on va utiliser la methode **on("event_name", data => {
 socket.on("message", data=>{console.log(data)})
 ``` 
 
-Pour envoyer des donnees a un utilisateur specifique qui est connecter sur notre socket, on utilise ** client.broadcast.to(id).emit("new-message", data)**
+Pour envoyer des donnees a un utilisateur specifique qui est connecter sur notre socket, on utilise **io.to(id).emit("new-message", data)**
 
 ```javascript
- client.broadcast.to(toUser.id).emit("new-message", {pseudo: currentUser.pseudo, message})
+ io.to(toUser.id).emit("new-message", {pseudo: currentUser.pseudo, message})
 ``` 

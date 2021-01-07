@@ -68,3 +68,8 @@ export const receiveMessageInAnotherComponent = (callback) => {
         callback(msg)
     })
 }
+
+export const getUserMessage = callback => {
+    socket.emit("getMessage", pseudo)
+    socket.on("getMyMessage", msg => callback(msg))
+}

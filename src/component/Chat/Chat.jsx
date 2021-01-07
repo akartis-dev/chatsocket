@@ -17,10 +17,10 @@ export const Chat = () => {
     return (
         <div className="container mt-4">
             <div className="row">
-                <div className="col-sm-3">
+                <div className="col-sm-12 col-md-3">
                     <Connected/>
                 </div>
-                <div className="col-sm-9">
+                <div className="col-sm-12 col-md-9">
                     <Switch>
                         <Route path='/chat/:pseudo' component={Message}/>
                         <Route path='/chat/' component={AboutChat}/>
